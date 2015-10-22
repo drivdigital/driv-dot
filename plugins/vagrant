@@ -1,4 +1,5 @@
-# Shortcodes for vagrant functions
+# Shortcodes and functions for vagrant
+
 alias vd='vagrant destroy -f'
 alias vu='vagrant up'
 alias vup='vagrant up --provision'

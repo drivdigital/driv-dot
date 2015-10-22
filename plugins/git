@@ -1,0 +1,17 @@
+# Shortcodes and functions for git
+
+# Git add & commit (with timestamp)
+alias gac='date +"%H:%M" && git add -A && git commit -m'
+
+# Copy a git diff to a directory
+function cpdiff () {
+  # Usage: cpdiff $diff_param $dir
+  for f in `git diff $1 --name-only`
+  do
+    mkdir -p "$2/$(dirname $f)"
+    cp $f "$2/$f"
+  done
+}
+
+# Git add file (ending with...)
+function gaf() { git add -- \*$* }
